@@ -1,15 +1,70 @@
 /**
  * core
  */
+let operand = 0;
+let operator = null;
 
-
-
+let operators = {
+    "+": function (o1,o2) {return o1+o2},
+    "-": function (o1,o2) {return o1-o2},
+    "*": function (o1,o2) {return o1*o2},
+    "/": function (o1,o2) {
+        if(o2 !=0){
+           return o1/o2;
+    }else{
+            return "Invalid Calculation";
+        }
+    }
+};
 
 /**
  * UI
  */
-window.addEventListener('load', function() {
-
-
-
+window.addEventListener('load', function () {
+    document.querySelector("#output").value = "Welcome";
+    let buttons = document.body.querySelectorAll("button");
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", readButton);
+    }
 });
+
+const readButton = function readButton(e){
+    let b = e.target;
+    let i = document.querySelector("#input");
+    let o = document.querySelector("#output");
+
+    if(b.className == "number") {
+        if(operand == 0) {
+            o.value = "";
+        }
+        i.value += b.value;
+    }
+    else if(b.className == "operator"){
+        if(operator == null) {
+            operand = Number(i.value);
+            i.value = "";
+        }
+        operator = b.value;
+        o.value = operand + " " + operator;
+    }
+    else if(b.className=="command"){
+        if(b.id == "key-=" && operator != null){
+            o.value = "";
+            let result = operators[operator](operand, Number(i.value));
+
+            if(!isNaN(Number(result))) {
+                i.value = result;
+            }
+            else{
+                i.value = "";
+                o.value = result;
+            }
+        }
+        else if(b.id == "key-c"){
+            i.value = "";
+            o.value = "";
+        }
+        operand = 0;
+        operator = null;
+    }
+};

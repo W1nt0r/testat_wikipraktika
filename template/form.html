@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="neuen-autor-registrieren">
+    <fieldset>
+        <legend>Autor</legend>
+        <label>Herr
+            <input type="radio" name="gender" value="male" checked/>
+        </label>
+        <label>Frau
+            <input type="radio" name="gender" value="female"/>
+        </label>
+        <label>Name
+            <input type="text" name="name" required/>
+        </label>
+        <label>Email
+            <input type="email" name="email" required/>
+        </label>
+        <label>Webseite
+            <input type="url" name="webseite" required/>
+        </label>
+        <label>Geburtstag
+            <input type="date" name="birthday" required/>
+        </label>
+        <label>Nationalität
+            <select name="nationality" size="1" required>
+                <option value="">--Wählen--</option>
+                <option value="CH">Switzerland</option>
+                <option value="DE">Deutschland</option>
+                <option value="FR">Frankreich</option>
+                <option value="IT">Italien</option>
+                <option value="AT">Österreich</option>
+            </select>
+        </label>
+        <label>Profiltext
+            <textarea name="profiltext" rows="10" cols="100"></textarea>
+        </label>
+        <label>Profilbilder
+            <input type="file" name="profilbilder" multiple/>
+        </label>
+    </fieldset>
+    <fieldset>
+        <legend>Rechtliches</legend>
+        <label>
+            <input type="checkbox" name="textcreator" required/>
+            Ich bestätige, dass ich der Urheber des Textes bin.
+        </label>
+        <label>
+            <input type="checkbox" name="imagecreator" required/>
+            Ich bestätige, dass ich der Urheber aller eingereichten Bilder bin.
+        </label>
+        <label>
+            <input type="checkbox" name="texttruth" required/>
+            Ich bestätige, dass der Text nach bestem Treu und Glauben der Wahrheit entspricht und die Bilder nicht manipuliert wurden.
+        </label>
+    </fieldset>
+    <button type="sumbit" name="submit">Account anlegen</button>
+    <button type="reset" name="reset">Eingabe zurücksetzen</button>
+</form>
+</body>
+</html>
