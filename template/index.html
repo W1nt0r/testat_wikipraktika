@@ -10,6 +10,18 @@
 
 		<link rel="icon" type="image/png" href="../media/icon-wikipraktika.png">
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
+
+		<script>
+			let slider;
+			window.addEventListener("load", function() {
+			    slider = document.body.querySelector("#font-slider");
+			    slider.addEventListener("change", function() {
+			        let fontSize = parseInt(slider.value, 10) / 10;
+			        document.body.querySelector("#font-size").innerHTML = fontSize;
+			        document.querySelector("*").style.fontSize = fontSize + "rem";
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<header>
@@ -80,7 +92,7 @@
 					In anderen Sprachen
 					<ul>
 						<li>
-							<a id="italian-site-link" href="/it/articles/calculator"><img src="../media/flag-it.svg" alt="Italian Flag" class="flagimage"> Italiano</a>
+							<a id="italian-site-link" href="/it/articles/calculator"><img src="../media/flag-it.svg" alt="Italian Flag" class="flagimage">Italiano</a>
 						</li>
 						<li>
 							<a id="french-site-link" href="/fr/articles/calculator"><img src="../media/flag-fr.svg" alt="French Flag" class="flagimage">Francais</a>
@@ -240,10 +252,10 @@
 
 					<small class="caption">TI-Nspire CX CAS Demonstration</small>
 
-					<p>
+					<small>
 						Von TheConnerdy, <a href="http://creativecommons.org/licenses/by-sa/3.0"> CC BY-SA 3.0</a>,
 						<a href="https://www.youtube.com/watch?v=6gKkz4VkSgk">via Youtube</a>
-					</p>
+					</small>
 
 					<footer>
 						<span>Zuletzt geändert von Philipp Graf</span>
@@ -307,6 +319,7 @@
 						<caption>Zeitgewinn durch Benutzung eines Taschenrechners</caption>
 						<thead>
 							<tr>
+								<th></th>
 								<th>2-Stellen</th>
 								<th>3-Stellen</th>
 								<th>4-Stellen</th>
