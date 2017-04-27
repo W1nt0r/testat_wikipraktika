@@ -1,7 +1,7 @@
 /**
  * core
  */
-let operand = 0;
+let operand = null;
 let operator = null;
 
 let operators = {
@@ -36,7 +36,7 @@ const readButton = function readButton(e){
     switch(b.className){
         case "number":
         {
-            if(operand == 0) {
+            if(operand == null) {
                 o.value = "";
             }
             i.value += b.value;
@@ -70,7 +70,7 @@ const readButton = function readButton(e){
                 i.value = "";
                 o.value = "";
             }
-            operand = 0;
+            operand = null;
             operator = null;
             break;
         }
