@@ -70,10 +70,14 @@ nav {
 
 video {
     width: 100%;
+    max-height: 100vh;
 }
 
-img[alt=Zeitgewinn] {
-    width: 20rem;
+img[alt="Zeitgewinn"] {
+    width: auto;
+    height: auto;
+    max-height: 100vh;
+    max-width: 100%;
     margin: auto;
     display: block;
 }
@@ -114,7 +118,7 @@ main h3 {
     margin: 1rem 0;
 }
 
-main h3:before {
+main h3::before {
     counter-increment: h3counter;
     content: counter(h3counter) " ";
 }
@@ -178,7 +182,7 @@ main dl > dd {
     margin-left: 1rem;
 }
 
-main dl > dd:before {
+main dl > dd::before {
     content: "\2316";
     margin-right: .2rem;
     font-weight: bold;
@@ -187,13 +191,15 @@ main dl > dd:before {
 main iframe {
     width: 100%;
     height: 56.25vw;
+    max-height: 100vh;
     border: none;
 }
 
 main iframe[name="Calculator application"] {
     display: block;
-    width: 45rem;
+    width: calc(2vh * 40);
     height: 50rem;
+    max-height: 100vh;
     margin: 0;
     border-radius: 1rem;
 }
@@ -241,6 +247,27 @@ nav a > .flagimage {
     height: .75rem;
     width: 1rem;
     margin-right: .2rem;
+}
+
+nav a[hreflang]::before {
+    content: '';
+    margin-right: .2rem;
+    width: 1rem;
+    height: .75rem;
+    display: inline-block;
+    background-size: 1rem .75rem;
+}
+
+nav a[hreflang="it"]::before {
+    background-image: url("../../media/flag-it.svg");
+}
+
+nav a[hreflang="fr"]::before {
+    background-image: url("../../media/flag-fr.svg");
+}
+
+nav a[hreflang="en"]::before {
+    background-image: url("../../media/flag-en.svg");
 }
 
 /* lists */
