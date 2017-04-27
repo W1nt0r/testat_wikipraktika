@@ -33,38 +33,47 @@ const readButton = function readButton(e){
     let i = document.querySelector("#input");
     let o = document.querySelector("#output");
 
-    if(b.className == "number") {
-        if(operand == 0) {
-            o.value = "";
-        }
-        i.value += b.value;
-    }
-    else if(b.className == "operator"){
-        if(operator == null) {
-            operand = Number(i.value);
-            i.value = "";
-        }
-        operator = b.value;
-        o.value = operand + " " + operator;
-    }
-    else if(b.className=="command"){
-        if(b.id == "key-=" && operator != null){
-            o.value = "";
-            let result = operators[operator](operand, Number(i.value));
-
-            if(!isNaN(Number(result))) {
-                i.value = result;
+    switch(b.className){
+        case "number":
+        {
+            if(operand == 0) {
+                o.value = "";
             }
-            else{
+            i.value += b.value;
+            break;
+        }
+        case "operator":
+        {
+            if(operator == null) {
+                operand = Number(i.value);
                 i.value = "";
-                o.value = result;
             }
+            operator = b.value;
+            o.value = operand + " " + operator;
+            break;
         }
-        else if(b.id == "key-c"){
-            i.value = "";
-            o.value = "";
+        case "command":
+        {
+            if(b.id == "key-=" && operator != null){
+                o.value = "";
+                let result = operators[operator](operand, Number(i.value));
+
+                if(!isNaN(Number(result))) {
+                    i.value = result;
+                }
+                else{
+                    i.value = "";
+                    o.value = result;
+                }
+            }
+            else if(b.id == "key-c"){
+                i.value = "";
+                o.value = "";
+            }
+            operand = 0;
+            operator = null;
+            break;
         }
-        operand = 0;
-        operator = null;
+
     }
-};
+}
