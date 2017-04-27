@@ -56,7 +56,11 @@ nav > ul > li > ul {
     padding-left: 1rem;
 }
 
-nav, body > main > section {
+body > main > section {
+    margin: 1rem;
+}
+
+nav {
     margin: .5rem;
 }
 
@@ -98,10 +102,6 @@ nav h2 {
 main h2 {
     font-size: 2rem;
     margin: .5rem 0;
-}
-
-main {
-    padding: .5rem;
 }
 
 main h3 {
@@ -189,7 +189,7 @@ main iframe {
 main iframe[name="Calculator application"] {
     display: block;
     width: 45rem;
-    height: 47rem;
+    height: 50rem;
     margin: 0;
     border-radius: 1rem;
 }
@@ -258,7 +258,7 @@ form[name="neuen-autor-registrieren"] {
 }
 
 form[name="neuen-autor-registrieren"] > fieldset {
-    padding: .2rem;
+    padding: .5rem;
     border-radius: .2rem;
 }
 
@@ -286,6 +286,7 @@ form[name="neuen-autor-registrieren"] label {
     padding: 0;
     margin: 0;
 }
+
 main input, main textarea {
     background-color: #eeeeee;
     border: none;
@@ -295,11 +296,11 @@ main input, main textarea {
     padding: .2rem;
 }
 
-main input:hover {
+main input:hover, main textarea:hover {
     border-bottom: 2px solid #0077bb;
 }
 
-main input:focus {
+main input:focus, main textarea:focus {
     border-bottom: 2px solid #0077bb;
     color: #0077bb;
 }
@@ -336,6 +337,27 @@ main select {
     font-family: inherit;
     font-size: 1rem;
     padding: .2rem;
+    border: 1px solid #aaaaaa;
+}
+
+main input[type="file"] {
+    background-color: #ffffff;
+    border: none;
+    border-radius: .5rem;
+    color: #333333;
+}
+
+input[name="calculator-search"] {
+    margin-left: .5rem;
+}
+
+#font-size-form {
+    margin: 1rem;
+}
+
+#font-size-form > input {
+    background-color: #ffffff;
+    border: none;
 }
 
 /* footer */
