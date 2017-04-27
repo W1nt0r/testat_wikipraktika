@@ -253,6 +253,29 @@ main ol {
 
 /* forms */
 
+form[name="neuen-autor-registrieren"] {
+    width: 100%;
+}
+
+form[name="neuen-autor-registrieren"] > fieldset {
+    padding: .2rem;
+    border-radius: .2rem;
+}
+
+form[name="neuen-autor-registrieren"] input, form[name="neuen-autor-registrieren"] select, form[name="neuen-autor-registrieren"] textarea {
+    width: 100%;
+}
+
+form[name="neuen-autor-registrieren"] input[type='radio'], form[name="neuen-autor-registrieren"] input[type='checkbox'] {
+    width: auto;
+
+}
+
+form[name="neuen-autor-registrieren"] label {
+    display: block;
+    margin: 1rem 0;
+}
+
 #font-size-form {
     float: right;
 }
@@ -263,7 +286,6 @@ main ol {
     padding: 0;
     margin: 0;
 }
-
 main input, main textarea {
     background-color: #eeeeee;
     border: none;
@@ -314,4 +336,23 @@ main select {
     font-family: inherit;
     font-size: 1rem;
     padding: .2rem;
+}
+
+/* footer */
+main > footer {
+    background-color: #005da0;
+    width: 100%;
+    margin-top: 1rem;
+    border: none;
+    padding: .5rem;
+    color: white;
+    font-style: normal;
+}
+
+main > footer a {
+    color: white;
+}
+
+main > footer img {
+    vertical-align: middle;
 }
