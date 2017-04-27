@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 	<head>
 		<meta charset="UTF-8">
 		<title>Wikipraktika | Taschenrechner - tragbare, handliche elektronische Rechenmaschine</title>
@@ -11,17 +11,7 @@
 		<link rel="icon" type="image/png" href="../media/icon-wikipraktika.png">
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
 
-		<script>
-			let slider;
-			window.addEventListener("load", function() {
-			    slider = document.body.querySelector("#font-slider");
-			    slider.addEventListener("change", function() {
-			        let fontSize = parseInt(slider.value, 10) / 10;
-			        document.body.querySelector("#font-size").innerHTML = fontSize;
-			        document.querySelector("*").style.fontSize = fontSize + "rem";
-				});
-			});
-		</script>
+		<script src="scripts/font-size.js"></script>
 	</head>
 	<body>
 		<header>
@@ -512,7 +502,7 @@
 				</address>
 
 				<p>
-					<a href="tel:+4155 444 33 22">055 444 33 22</a>
+					<a href="tel:+41554443322">055 444 33 22</a>
 					<a href="mailto:info@wikipraktika.com">info@wikipraktika.com</a>
 				</p>
 
