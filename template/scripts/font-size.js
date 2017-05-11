@@ -1,5 +1,7 @@
+
 let slider;
 window.addEventListener("load", function() {
+    'use strict';
     slider = document.body.querySelector("#font-slider");
     slider.addEventListener("change", function() {
         let fontSize = parseInt(slider.value, 10) / 10;
