@@ -85,9 +85,9 @@ body > main > section {
     margin: 1rem;
 }
 
-main > section > article > iframe {
+main > section > article > figure > iframe {
     width: 100%;
-    height: 56.25vw;
+    height: calc(56.25vw - 2rem);
     max-height: 100vh;
     border: none;
 }
@@ -100,8 +100,9 @@ body > header > a > img {
     float: left;
 }
 
-main > section > article > video {
+main > section > article > figure > video {
     width: 100%;
+    height: calc(56.25vw - 2rem);
     max-height: 100vh;
 }
 
@@ -109,7 +110,7 @@ main > section > article > .leftside-figure > img {
     width: 100%;
 }
 
-img[alt="Zeitgewinn"] {
+img[alt="Zeitgewinn"], object[name="Zeitgewinn"] {
     width: auto;
     height: auto;
     max-height: 100vh;
@@ -146,11 +147,12 @@ main > section > article > header > h3 {
 
 main > section > article > header > h3::before {
     counter-increment: h3counter;
-    content: counter(h3counter) " ";
+    content: counter(h3counter);
+    margin-right: .5rem;
 }
 
 /* content */
-main > section > article p {
+main > section > article > p {
     margin: .6rem 0;
 }
 
@@ -170,41 +172,49 @@ main > section > article > .leftside-figure > figcaption > a {
     color: #333333;
 }
 
-main > section > article small {
+main > section > article > small {
     font-size: .8rem;
     display: block;
     margin: 1rem 0;
 }
 
-main > section > article small > a {
+main > section > article > small > a {
     color: #000000;
 }
 
-main > section > article small.caption {
+main > section > article > small.caption {
     color: #888888;
 }
 
-main > section > article footer {
+main > section > article > footer {
     border: 1px dotted #000000;
     font-style: italic;
     padding: 0 .2rem;
     font-size: .9rem;
+    position: relative;
 }
 
-main > section > article footer > time {
-    float: right;
+main > section > article > footer > small {
+    display: inline;
+    font-size: .9rem;
 }
 
-main > section > article dl > dt {
+main > section > article > footer > time {
+    position: absolute;
+    right: .2rem;
+
+}
+
+main > section > article > dl > dt {
     font-weight: bold;
     color: #005da0;
 }
 
-main > section > article dl > dd {
+main > section > article > dl > dd {
     margin-left: 1rem;
 }
 
-main > section > article dl > dd::before {
+main > section > article > dl > dd::before {
     content: "\2316";
     margin-right: .2rem;
     font-weight: bold;
@@ -214,7 +224,7 @@ main > section > article dl > dd::before {
 /* specific */
 iframe[name="Calculator application"] {
     display: block;
-    width: calc(2vh * 40);
+    width: 80vh;
     height: 50rem;
     max-height: 90vh;
     margin: 0;
@@ -261,7 +271,7 @@ nav a[hreflang="en"]::before {
 
 /* general */
 
-a:hover {
+a:hover, a:active {
     text-decoration: none;
 }
 
@@ -274,41 +284,41 @@ nav > ul > li > ul {
     padding-left: 1rem;
 }
 
-main > section > article ol {
+main > section > article > ol {
     list-style-position: inside;
     margin: .5rem 0;
 }
 
 /* table */
-main > section > article table {
+main > section > article > table {
    width: 100%;
    border-collapse: collapse;
 }
 
-main > section > article table > caption {
+main > section > article > table > caption {
     padding: .2rem;
 }
 
-main > section > article table > thead {
+main > section > article > table > thead {
     border-top: 2px solid #000000;
     border-bottom: 2px solid #000000;
     background-color: #005da0;
     color: #ffffff;
 }
 
-main > section > article table th, main > section > article table td {
+main > section > article > table th, main > section > article > table td {
     padding: .5rem;
 }
 
-main > section > article table > tbody th {
+main > section > article > table > tbody th {
     text-align: left;
 }
 
-main > section > article table > tbody td {
+main > section > article > table > tbody td {
     text-align: center;
 }
 
-main > section > article table > tbody tr:nth-of-type(2n) {
+main > section > article > table > tbody tr:nth-child(2n) {
     border-top: 1px solid #bdd0e4;
     border-bottom: 1px solid #bdd0e4;
     background-color: #dbe6ef;
